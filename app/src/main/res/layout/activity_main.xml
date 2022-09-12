@@ -7,33 +7,51 @@
     android:background="@drawable/img"                                          
     tools:context=".MainActivity">
 
-    <Button
+    <WordButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="WORD"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="301dp"
+        tools:layout_editor_absoluteY="655dp" />
+    
+    <OutputButton
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GUESS!"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="301dp"
         tools:layout_editor_absoluteY="655dp" />
 
     <TextView
-        android:id="@+id/firstGuess"
+        android:id="@+id/FirstGuess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
-        android:text="First Guess"
+        android:text="Guess #1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    
     <TextView
-        android:id="@+id/firstGuessCheck"
+        android:id="@+id/FirstGuessCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="First Guess Check"
+        android:text="Guess #1 Check"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstGuess" />
+        app:layout_constraintTop_toBottomOf="@+id/FirstGuess" />
 
     <TextView
         android:id="@+id/SecondGuess"
@@ -41,9 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Second Guess"
+        android:text="Guess #2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstGuessCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/FirstGuessCheck" />
 
     <TextView
         android:id="@+id/SecondGuessCheck"
@@ -51,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Second Guess Check"
+        android:text="Guess #2 Check"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SecondGuess" />
 
@@ -61,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Third Guess"
+        android:text="Guess #3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SecondGuessCheck" />
 
@@ -71,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Second Guess Check"
+        android:text="Guess #3 Check"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ThirdGuess" />
 
@@ -84,59 +102,35 @@
         tools:layout_editor_absoluteY="655dp"></EditText>
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/FirstGuessOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:text="Guess #1 Output"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/SecondGuessOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="78dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Guess #2 Output"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" 
+        app:layout_constraintTop_toBottomOf="@+id/FirstGuessOutput" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/ThirdGuessOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="121dp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="170dp" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="212dp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="264dp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="102dp"
-        android:layout_height="62dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="500dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Guess #3 Output"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" 
+        app:layout_constraintTop_toBottomOf="@+id/SecondGuessOutput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
