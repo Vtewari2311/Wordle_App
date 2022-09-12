@@ -4,30 +4,59 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
+    val wordToGuess = Array<Char>(4)
+    wordToGuess = getRandomFourLetterWord()
     var counter = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+                
+        funView.hideKeyboard() {
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(windowToken, 0)
+        }
+        
         setContentView(R.layout.activity_main)
-
+        
+        var editText = findViewById<EditText>(R.id.editText)
         val button = findViewById<Button>(R.id.button)
-        val upgradeButton = findViewById<Button>(R.id.button)
-        val word = findViewById<TextView>(R.id.textView)
+        val textView = findViewById<Button>(R.id.textView)
+        val textViewforGuess1 = findViewById<TextView>(R.id.textView)
+        val textViewforGuess2 = findViewById<TextView>(R.id.textView)
+        val textViewforGuess3 = findViewById<TextView>(R.id.textView)
+        val textViewOutput1 = findViewById<TextView>(R.id.textView)
+        val textViewGuessOutput2 = findViewById<TextView>(R.id.textView)
+        val textViewGuessOutput3 = findViewById<TextView>(R.id.textView)
+        val checkViewforGuess1 = findViewById<TextView>(R.id.textView)
+        val checkViewforGuess2 = findViewById<TextView>(R.id.textView)
+        val checkViewforGuess3 = findViewById<TextView>(R.id.textView)
+        val word = findViewById<TextView>(R.id.word)
+        
+        var counter = 0
+        word.visibility = View.GONE
+        
         button.setOnClickListener {
             Toast.makeText(it.context, "Clicked Button!", Toast.LENGTH_SHORT).show()
+            it.hideKeyboard()
             counter++
             if(counter == 1) {
-                FirstGuess.text = enterWord.text
+                FirstGuess.text = editText.text.toString()
+                val guess1 = checkGuess(FirstGuess.text)
+                it.hideKeyBoard()
+                checkViewforGuess1.text = guess1
             }
-            if(counter == 2) {
-                SecondGuess.text = enterWord.text
+            else if(counter == 2) {
+                SecondGuess.text = editText.text.toString()
+                val guess2 = checkGuess(SecondGuess.text)
+                it.hideKeyBoard()
+                checkViewforGuess2.text = guess2
             }
-            if(counter == 3) {
-                ThirdGuess.text = enterWord.text
+            else if(counter == 3) {
+                ThirdGuess.text = editText.text.toString()
+                val guess3 = checkGuess(ThirdGuess.text)
+                it.hideKeyBoard()
+                checkViewforGuess3.text = guess3
             }
-            if(counter == 4) {
-                word.text = wordToGuess
-                buttonRestart.visibility = View.VISIBLE
-            }
+            buttonRestart.visibility = View.VISIBLE
         }
         
     }
@@ -41,7 +70,6 @@ class MainActivity : AppCompatActivity() {
      *   '+' represents the right letter in the wrong place
      *   'X' represents a letter not in the target word
      */
-    private val wordToGuess = Array<Char>(4)
     private fun checkGuess(guess: String) : String {
         var result = ""
         for (i in 0..3) {
