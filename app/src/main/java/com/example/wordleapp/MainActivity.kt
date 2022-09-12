@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
             if(counter == 2) {
                 SecondGuess.text = enterWord.text
             }
-            if(counter == 2) {
+            if(counter == 3) {
                 ThirdGuess.text = enterWord.text
             }
-            if(counter == 2) {
+            if(counter == 4) {
                 word.text = wordToGuess
                 buttonRestart.visibility = View.VISIBLE
             }
