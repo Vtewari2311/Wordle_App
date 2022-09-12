@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <WordButton
-        android:id="@+id/button"
+        android:id="@+id/word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="WORD"
@@ -21,7 +21,7 @@
         tools:layout_editor_absoluteY="655dp" />
     
     <OutputButton
-        android:id="@+id/button2"
+        android:id="@+id/guess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GUESS!"
