@@ -15,10 +15,19 @@ class MainActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(windowToken, 0)
         }
         
+        fun markButtonDisable(button: Button) {
+            button?.isEnabled = false
+            button.isClickable = false
+            button?.setTextColor(ContextCompat.getColor(textView.context, R.color.white))
+            button?.setBackgroundColor(ContextCompat.getColor(textView.context, R.color.greyish))
+        }
+        
         setContentView(R.layout.activity_main)
         
         var editText = findViewById<EditText>(R.id.editText)
         val button = findViewById<Button>(R.id.button)
+        val buttonRestart = findViewbyId<Button>(R.id.guess)
+        val word = findViewById<TextView>(R.id.word)
         val textView = findViewById<Button>(R.id.textView)
         val textViewforGuess1 = findViewById<TextView>(R.id.FirstGuess)
         val textViewforGuess2 = findViewById<TextView>(R.id.SecondGuess)
@@ -29,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         val checkViewforGuess1 = findViewById<TextView>(R.id.FirstGuessCheck)
         val checkViewforGuess2 = findViewById<TextView>(R.id.SecondGuessCheck)
         val checkViewforGuess3 = findViewById<TextView>(R.id.ThirdGuessCheck)
-        val word = findViewById<TextView>(R.id.word)
         
         var counter = 0
         word.visibility = View.GONE
@@ -39,24 +47,27 @@ class MainActivity : AppCompatActivity() {
             it.hideKeyboard()
             counter++
             if(counter == 1) {
-                FirstGuess.text = editText.text.toString()
-                val guess1 = checkGuess(FirstGuess.text)
+                textViewGuessOutput1.text = editText.text.toString().uppercase()
+                var guess1 = checkGuess(textViewGuessOutput1.text)
                 it.hideKeyBoard()
                 checkViewforGuess1.text = guess1
+                editText.getText().clear()
             }
             else if(counter == 2) {
-                SecondGuess.text = editText.text.toString()
-                val guess2 = checkGuess(SecondGuess.text)
+                textViewGuessOutput2.text = editText.text.toString().uppercase()
+                var guess2 = checkGuess(textViewGuessOutput2.text)
                 it.hideKeyBoard()
-                checkViewforGuess2.text = guess2
+                checkViewforGuess1.text = guess1
+                editText.getText().clear()
             }
             else if(counter == 3) {
-                ThirdGuess.text = editText.text.toString()
-                val guess3 = checkGuess(ThirdGuess.text)
+                textViewGuessOutput1.text = editText.text.toString().uppercase()
+                var guess3 = checkGuess(textViewGuessOutput3.text)
                 it.hideKeyBoard()
                 checkViewforGuess3.text = guess3
+                editText.getText().clear()
             }
-            buttonRestart.visibility = View.VISIBLE
+            buttonRestart.visibility = markButtonDisable(buttonRestart)
         }
         
     }
