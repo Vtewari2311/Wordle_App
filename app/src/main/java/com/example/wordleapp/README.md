@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='C:\Users\guest1\Downloads\GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='GIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...
