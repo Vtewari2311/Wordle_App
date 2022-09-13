@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         var counter = 0
         word.visibility = View.GONE
+        buttonRestart.visibility = View.VISIBLE
         
         buttonRestart.setOnClickListener {
             Toast.makeText(it.context, "Clicked Button!", Toast.LENGTH_SHORT).show()
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             markButtonDisable(buttonRestart)
+            word.visibility = View.VISIBLE
         }
         
     }
